@@ -1,0 +1,62 @@
+import json
+import os
+import boto3
+import pyotp
+
+REGION = os.environ.get("AWS_REGION", "ap-south-1")
+TOTP_SECRET = os.environ["TOTP_SECRET"]
+ec2 = boto3.client("ec2", region_name=REGION)
+totp = pyotp.TOTP(TOTP_SECRET)
+
+def lambda_handler(event, context):
+    try:
+        body = json.loads(event.get("body") or "{}")
+        otp = str(body.get("otp") or "")
+
+        # Verify OTP from Google Authenticator
+        if not totp.verify(otp):
+            return {
+                "statusCode": 401,
+                "body": json.dumps({"error": "Invalid or expired OTP"})
+            }
+
+        action = (body.get("action") or "").lower()
+        instance_id = body.get("instanceId")
+
+        if not instance_id:
+            return {
+                "statusCode": 400,
+                "body": json.dumps({"error": "Missing instanceId"})
+            }
+
+        # Perform EC2 action
+        if action == "start":
+            ec2.start_instances(InstanceIds=[instance_id])
+            action_result = f"Start requested for {instance_id}"
+        elif action == "stop":
+            ec2.stop_instances(InstanceIds=[instance_id])
+            action_result = f"Stop requested for {instance_id}"
+        else:
+            return {
+                "statusCode": 400,
+                "body": json.dumps({"error": "Invalid action"})
+            }
+
+        # Get full instance details
+        desc = ec2.describe_instances(InstanceIds=[instance_id])
+        instance_details = desc["Reservations"][0]["Instances"][0]
+
+        return {
+            "statusCode": 200,
+            "body": json.dumps({
+                "result": action_result,
+                "details": instance_details
+            }, default=str)  # default=str ensures datetime/Decimal types are serializable
+        }
+
+    except Exception as e:
+        print("Error:", str(e))
+        return {
+            "statusCode": 500,
+            "body": json.dumps({"error": "Internal error", "message": str(e)})
+        }
