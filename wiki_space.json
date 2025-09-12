@@ -1,0 +1,112 @@
+[
+ {
+  "app_switcher_logo": null,
+  "dark_mode_logo": null,
+  "docstatus": 0,
+  "doctype": "Wiki Space",
+  "favicon": null,
+  "light_mode_logo": null,
+  "modified": "2025-09-12 13:08:30.148756",
+  "name": "td567hqkc0",
+  "navbar_items": [],
+  "route": "docs",
+  "space_name": "docs",
+  "wiki_sidebars": [
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Get Started",
+    "wiki_page": "tq67am75a1"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Get Started",
+    "wiki_page": "tq7vhveahh"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Development",
+    "wiki_page": "2ecvovs387"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Development",
+    "wiki_page": "2lkjg593k4"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Development",
+    "wiki_page": "2rnlc281ev"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Development",
+    "wiki_page": "562ndv2hs3"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Development",
+    "wiki_page": "4v1uoggvbc"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Development",
+    "wiki_page": "4ig3n32vh2"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Console & Commands",
+    "wiki_page": "3aq12r2ivs"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Console & Commands",
+    "wiki_page": "3ig6ha0v74"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Console & Commands",
+    "wiki_page": "3sovni4p4q"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Data Management",
+    "wiki_page": "5m1oojdj5k"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Data Management",
+    "wiki_page": "5rttpjjff6"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Data Management",
+    "wiki_page": "62ejmru3g1"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Data Management",
+    "wiki_page": "67jrhasmte"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Deployment & Operations",
+    "wiki_page": "6le146tn1u"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Deployment & Operations",
+    "wiki_page": "6qtrl8np2u"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "Deployment & Operations",
+    "wiki_page": "7860f1jsmm"
+   },
+   {
+    "hide_on_sidebar": 0,
+    "parent_label": "General",
+    "wiki_page": "td45ibd37m"
+   }
+  ]
+ }
+]
