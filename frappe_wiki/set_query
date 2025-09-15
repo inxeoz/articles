@@ -1,0 +1,48 @@
+
+frappe.ui.form.on('Wiki Space Access', {
+    refresh: function(frm) {
+        // Set query on 'page' field inside child table 'access_list'
+        frm.set_query('page', 'access_list', function(doc, cdt, cdn) {
+            // This query references your server method with filters
+            return {
+                query: 'wiki.wiki.doctype.wiki_space_access.wiki_space_access.fetch_page_simple_link',
+                filters: {
+                    wiki_space_route: 'docs'
+                }
+            };
+        });
+    }
+});
+
+
+
+####################
+####################
+
+
+@frappe.whitelist()
+def fetch_page_simple_link(doctype, txt, searchfield, start, page_len, filters):
+    # Parse wiki_space_route from filters (might be string or dict)
+    import json
+    if isinstance(filters, str):
+        filters = json.loads(filters)
+    wiki_space_route = filters.get("wiki_space_route")
+    if not wiki_space_route:
+        frappe.throw(_("Please set Wiki Space route first"))
+    
+    # Standard Frappe search patterns (handle `txt` for search input)
+    wiki_pages = frappe.get_all(
+        "Wiki Page",
+        filters={
+            "route": ["like", f"{wiki_space_route}/%"],
+            "published": 1,
+            "title": ["like", f"%{txt}%"] if txt else ["!=", ""]
+        },
+        fields=["name", "title"],
+        order_by="title asc",
+        start=start,  # Pagination support
+        page_length=page_len,
+    )
+    
+    # Each result must be [id, value] → [name, title]
+    return [[page.name, page.title] for page in wiki_pages]
