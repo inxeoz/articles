@@ -1,0 +1,5 @@
+import logging
+
+# Suppress Werkzeug debugger/reloader messages
+logging.getLogger('werkzeug').setLevel(logging.ERROR)
+logging.getLogger('werkzeug.reloader').setLevel(logging.CRITICAL)
