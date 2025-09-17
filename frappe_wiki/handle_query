@@ -1,0 +1,8 @@
+if doc has web view enabled then (let mydoc)
+
+then in in mydoc.py that has get_context function which handles the query
+
+	def get_context(self, context):
+		foo = frappe.form_dict.get("foo")
+		print(f"------------------------------>{foo}")
+		
