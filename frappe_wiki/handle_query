@@ -6,3 +6,5 @@ then in in mydoc.py that has get_context function which handles the query
 		foo = frappe.form_dict.get("foo")
 		print(f"------------------------------>{foo}")
 		
+##################
+http://localhost:8001/docs/installing-apps?foo=bar
