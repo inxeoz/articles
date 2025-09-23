@@ -25,8 +25,11 @@
 
 ### 3. Reports in Frappe Using Mongodb
 
-> Installing MongoDb Sample Data
+> [Installing MongoDb Sample Data](reports_in_frappe/installing_sample_data.md)
 >> https://github.com/neelabalan/mongodb-sample-dataset.git
+
+>[Creating Virtual DocType named "Airbnb data"](reports_in_frappe/creating_virtual_doctype_airbnb_data.md)
+> > to Show the Records of Airbnb data from mongodb to frappe
 
 > Creating Frappe API To Crunch and Serve Report Data
 > >report_app_frappe.report_app_frappe.api.token_utils import verify_token
