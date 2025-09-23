@@ -2,13 +2,13 @@
 
 ### 1. Exploring Frappe
 
-> Doctype
+> [Doctype](exploring_frappe/doctype.md)
 
->Workflow 
+>[Workflow](exploring_frappe/workflow.md) 
 
->Role / Role Permission
+>[Role / Role Permission](exploring_frappe/role_and_role_permission.md)
 
->Client and Server Script
+>[Client and Server Script](exploring_frappe/client_and_server_script.md)
 
 ### 2. Implement VPMS Flow In Frappe
 
