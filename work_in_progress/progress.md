@@ -31,7 +31,7 @@
 >[Creating Virtual DocType named "Airbnb data"](reports_in_frappe/creating_virtual_doctype_airbnb_data.md)
 > > to Show the Records of Airbnb data from mongodb to frappe
 
-> Creating Frappe API To Crunch and Serve Report Data
+> [Creating Frappe API To Crunch and Serve Report Data](reports_in_frappe/frappe_api_for_data_crunch_serve.md)
 > >report_app_frappe.report_app_frappe.api.token_utils import verify_token
 
 
